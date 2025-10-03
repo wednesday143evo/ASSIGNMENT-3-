@@ -1,0 +1,44 @@
+1. # Create a 1D array from 1 to 20
+arr = np.arange(1, 21)
+print("1D Array:", arr)
+
+# a. Sum, Mean, Median, Std Dev
+print("Sum:", np.sum(arr))
+print("Mean:", np.mean(arr))
+print("Median:", np.median(arr))
+print("Standard Deviation:", np.std(arr))
+
+# b. Indices of elements > 10
+indices = np.where(arr > 10)
+print("Indices of elements > 10:", indices)
+2.# Create a 4x4 array with numbers 1 to 16
+arr2d = np.arange(1, 17).reshape(4, 4)
+print("2D Array:\n", arr2d)
+
+# Transpose
+print("Transpose:\n", arr2d.T)
+
+# Row-wise and column-wise sums
+print("Row-wise sum:", np.sum(arr2d, axis=1))
+print("Column-wise sum:", np.sum(arr2d, axis=0))
+3.# Create two 3x3 random arrays
+a = np.random.randint(1, 21, size=(3, 3))
+b = np.random.randint(1, 21, size=(3, 3))
+
+print("Array A:\n", a)
+print("Array B:\n", b)
+
+# a. Element-wise addition, subtraction, multiplication
+print("Addition:\n", a + b)
+print("Subtraction:\n", a - b)
+print("Multiplication:\n", a * b)
+
+# b. Dot product
+print("Dot Product:\n", np.dot(a, b))
+4.# Create and reshape
+arr_reshaped = np.arange(1, 13).reshape(3, 4)
+print("3x4 Array:\n", arr_reshaped)
+
+# Slice first 2 rows and last 2 columns
+sliced = arr_reshaped[:2, -2:]
+print("Sliced Array (First 2 rows, Last 2 cols):\n", sliced)
