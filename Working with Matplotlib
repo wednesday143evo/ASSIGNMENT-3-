@@ -1,0 +1,57 @@
+# ------------------------------------
+# Assignment 3 - Working with Matplotlib
+# ------------------------------------
+
+# Step 1: Import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 1. Line Plot
+x = [1, 2, 3, 4, 5]
+y = [10, 15, 25, 30, 50]
+
+plt.figure(figsize=(6, 4))
+plt.plot(x, y, marker='o', linestyle='-', color='blue', label='Growth')
+plt.title("Line Plot Example")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.grid(True)
+plt.legend()
+plt.show()
+
+# 2. Bar Graph - Students' Marks
+students = ['John', 'Jane', 'Alice', 'Bob']
+marks = [75, 85, 60, 90]
+
+plt.figure(figsize=(6, 4))
+colors = ['red', 'green', 'blue', 'purple']
+plt.bar(students, marks, color=colors)
+plt.title("Marks Scored by Students")
+plt.xlabel("Students")
+plt.ylabel("Marks")
+plt.ylim(0, 100)
+plt.show()
+
+# 3. Pie Chart - Revenue by Region
+regions = ['North America', 'Europe', 'Asia', 'Others']
+revenue = [45, 25, 20, 10]
+
+# Find the region with the highest revenue to highlight
+explode = [0.1 if rev == max(revenue) else 0 for rev in revenue]
+
+plt.figure(figsize=(6, 6))
+plt.pie(revenue, labels=regions, explode=explode, autopct='%1.1f%%', shadow=True, startangle=140)
+plt.title("Company Revenue by Region")
+plt.axis('equal')  # Equal aspect ratio ensures pie is circular
+plt.show()
+
+# 4. Histogram - Random Integers Distribution
+random_data = np.random.randint(1, 101, size=1000)
+
+plt.figure(figsize=(7, 5))
+plt.hist(random_data, bins=20, color='orange', edgecolor='black')
+plt.title("Histogram of Random Integers (1 to 100)")
+plt.xlabel("Value")
+plt.ylabel("Frequency")
+plt.grid(True)
+plt.show()
